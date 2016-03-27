@@ -1,0 +1,120 @@
+\documentclass[review]{elsarticle}
+\usepackage{float}
+\usepackage{lineno}
+\usepackage{hyperref}
+\urlstyle{same}
+\usepackage[version=3]{mhchem}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage[utf8]{inputenc}
+\modulolinenumbers[5]
+
+% Replaces journal with pagenumber
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{\centerline{\thepage}}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+% \journal{ } 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{}
+
+%% Group authors per affiliation:
+\author{Peter Armstrong}
+\address{University College Cork \\ 115224113}
+
+\begin{abstract}
+The aim of this project is to model the heat transfer through a cooling rod using the finite volume method.
+The 1D heat transfer equation is used to model the temperature distribution.
+The equations for the cooling fin are manually developed for a three node grid. These equations are then solved in a python script to calculate temperature values at each node. Three different grid sizes are compared and the results for each grid are compared with the analytical solution.
+Percentage error between the analytical solution and the finite volume method was graphed, and discretization error between the three meshes was modelled.
+
+% TODO: Insert major results / conclusions.
+% Aims
+% Methods
+% Key Results
+% Major Conclusions
+
+\end{abstract}
+
+% \begin{keyword}
+% \texttt{elsarticle.cls}\sep \LaTeX\sep Elsevier \sep template
+% \MSC[2010] 00-01\sep  99-00
+% \end{keyword}
+
+% TOC
+
+% Nomenclature
+
+% Introduction
+% Background information
+% Aim - problem statement
+% develop objectives - specific tasks to meet the aim
+
+
+% Main body
+% In detail development of methods
+% Justify engineering solutions
+% Crucial to credibility of work
+% Results
+% discussion
+
+% Ending
+% Conclusions - consise. Bullet points may be appropriate. Link back to aims in introduction
+% Recommendations
+
+% Discuss images / tables before they are presented
+
+\end{frontmatter}
+
+\linenumbers
+
+\section{Introduction}
+Cooling fins are used in many devices where heat needs to be dissipated from a heat source. Car radiators and computer processor heatsinks both incorporate cooling fins. They cool the heat source by increasing the surface area available for convective heat transfer. It is important to accurately model the heat transfer through a cooling fin.
+
+
+In this analysis, a circular section cooling fin is attached to a heat source at a temperature of 250\degree C. Heat is lost to the ambient temperature of 20\degree C. 
+
+\section*{References}
+
+\bibliography{bib}
+
+\end{document}
