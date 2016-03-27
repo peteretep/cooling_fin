@@ -1,6 +1,7 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
-grid_size = 5
+grid_size = 15
 l = 1.5
 nsquared = 25
 n = np.sqrt(nsquared)
@@ -50,6 +51,20 @@ def discretisation_error():
         c.append(float(analytical_solution()[i] - finite_volume_method()[i]) * 100 /analytical_solution()[i])
     return c
 
+
+def plot():
+    plt.title('Temperature vs Distance - %s Nodes' % grid_size)
+    plt.ylabel('Temperature $^\circ$C')
+    plt.xlabel('Distance (m)')
+    x = np.array(range(grid_size))*dx*l
+    # plt.axis([0, 2])
+    plt.xlim(0,l)
+    analytical_plot = plt.plot(x, analytical_solution(), 'b-', linewidth=2, label='Analytical')
+    fvm_plot = plt.plot(x, finite_volume_method(), 'r-', linewidth=2, label='FVM')
+    plt.legend()
+    plt.show()
+
+plot()
 print('Analytical Solution:')
 print analytical_solution()
 
